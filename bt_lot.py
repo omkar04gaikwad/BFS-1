@@ -3,7 +3,6 @@
 # We use BFS with a queue to traverse the tree level by level.
 # For each level, we process all nodes currently in the queue (i.e., one full level),
 # add their values to a result list, and enqueue their children.
-#
 # Time Complexity: O(n), where n is the number of nodes in the tree (each node is visited once)
 # Space Complexity: O(n), for the queue and result list
 ###
