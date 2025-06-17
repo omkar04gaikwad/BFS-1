@@ -1,17 +1,17 @@
-"""
-Approach:
-- We use Kahn's Algorithm (BFS-based Topological Sort) to detect cycles in a directed graph.
-- First, we build an adjacency list from prerequisites.
-- Then, we compute the in-degree (number of prerequisites) for each course.
-- We enqueue all courses with in-degree 0 (i.e., no prerequisites).
-- While processing the queue, for each course taken, we reduce the in-degree of its dependent courses.
-- If any of those reach in-degree 0, we enqueue them.
-- If we can process all `numCourses`, return True (no cycle).
-- If not, return False (cycle exists).
+###
+### Approach:
+### - We use Kahn's Algorithm (BFS-based Topological Sort) to detect cycles in a directed graph.
+### - First, we build an adjacency list from prerequisites.
+### - Then, we compute the in-degree (number of prerequisites) for each course.
+### - We enqueue all courses with in-degree 0 (i.e., no prerequisites).
+### - While processing the queue, for each course taken, we reduce the in-degree of its dependent courses.
+### - If any of those reach in-degree 0, we enqueue them.
+### - If we can process all `numCourses`, return True (no cycle).
+### - If not, return False (cycle exists).
 
-Time Complexity: O(V + E), where V = numCourses, E = number of prerequisites
-Space Complexity: O(V + E), for the adjacency list and in-degree array
-"""
+### Time Complexity: O(V + E), where V = numCourses, E = number of prerequisites
+### Space Complexity: O(V + E), for the adjacency list and in-degree array
+###
 from collections import defaultdict, deque
 class Solution:
     def canFinish(self, numCourses, prerequisites):
